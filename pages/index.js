@@ -21,10 +21,9 @@ export default function Home({ allPostsData }) {
       </Head>
     
       <section class="p-10 lg:p-20">
+      <div class="h-3/4 w-3/4 absolute top-0 left-0 bg-white dark:bg-black"></div>
         <div class="container mx-auto min-h-1/2 grid lg:grid-cols-2 gap-8">
-          <div class="h-2/3 w-3/4 absolute top-0 left-0 bg-black bg-opacity-10 -z-10"></div>
-
-          <div class="">
+          <div class="z-10">
             <h2 class="text-7xl font-semibold lg:mt-20 font-serif">Welcome <br/>to our journal!</h2>
             <p class="text-lg mt-4">We hope you follow along and enjoy some of our stories. We hope you follow along and enjoy some of our stories. We hope you follow along and enjoy some of our stories. Lorem ipsum.</p>
           </div>

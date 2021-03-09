@@ -1,8 +1,12 @@
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        'background': '#f6f4f2',
+        'background-dark': '#121212',
+      },
       gridTemplateColumns: {
         '1/3': '1fr 2fr',
         '2/3': '2fr 1fr',
@@ -14,6 +18,7 @@ module.exports = {
       },
       zIndex: {
         '-10': '-10',
+        '-20': '-20',
       },
       screens: {
         'sm': '640px',
@@ -23,6 +28,8 @@ module.exports = {
         'lg': '1024px',
         // => @media (min-width: 1024px) { ... }
         'xl': '1152px',
+        // => @media (min-width: 1152px) { ... }
+        '2xl': '1152px',
         // => @media (min-width: 1152px) { ... }
       },
     },

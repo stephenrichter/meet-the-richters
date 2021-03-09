@@ -6,7 +6,7 @@ export const siteTitle = 'Meet the Richters'
 
 export default function Layout({ children, home }) {
   return (
-    <div class="flex flex-col h-screen justify-between">
+    <div class="flex flex-col h-screen justify-between bg-background dark:bg-background-dark -z-20">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -25,7 +25,7 @@ export default function Layout({ children, home }) {
 
       <Header />
 
-      <main class="mt-24 mb-auto text-gray-900">{children}</main>
+      <main class="mt-24 mb-auto text-gray-900 dark:text-gray-100">{children}</main>
 
       <Footer />
     </div>
