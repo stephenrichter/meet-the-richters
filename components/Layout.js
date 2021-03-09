@@ -1,13 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Header from '../components/Header'
-import Link from 'next/link'
+import Footer from '../components/Footer'
 
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'Meet the Richters'
 
 export default function Layout({ children, home }) {
   return (
-    <>
+    <div class="flex flex-col h-screen justify-between">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -26,7 +25,9 @@ export default function Layout({ children, home }) {
 
       <Header />
 
-      <main class="container mx-auto text-gray-900">{children}</main>
-    </>
+      <main class="mt-24 mb-auto text-gray-900">{children}</main>
+
+      <Footer />
+    </div>
   )
 }
