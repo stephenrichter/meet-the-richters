@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <header class="fixed top-0 z-20 w-full px-10 lg:px-20 bg-white dark:bg-black">
+    <header class="fixed top-0 z-20 w-full px-10 lg:px-20 bg-white dark:bg-black duration-500">
       <div class="container mx-auto flex justify-between py-3">
         <Link href="/"><a class="text-2xl font-serif dark:text-gray-200 py-3">Meet the Richters</a></Link>
         <nav class="self-center uppercase">

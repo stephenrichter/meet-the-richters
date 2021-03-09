@@ -4,9 +4,9 @@ import Footer from '../components/Footer'
 
 export const siteTitle = 'Meet the Richters'
 
-export default function Layout({ children, home }) {
+export default function Layout({ children }) {
   return (
-    <div class="flex flex-col h-screen justify-between bg-background dark:bg-background-dark -z-20">
+    <div class="flex flex-col h-fill justify-between bg-background dark:bg-background-dark duration-500 -z-20">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
