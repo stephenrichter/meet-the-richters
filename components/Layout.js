@@ -56,7 +56,7 @@ export default function Layout({ children }) {
 
       <Header onToggleMenu={toggleMenu} />
 
-      <main class="mt-24 mb-auto text-gray-900 dark:text-gray-100">{children}</main>
+      <main class="mt-20 mb-auto text-gray-900 dark:text-gray-100">{children}</main>
 
       <Footer />
     </div>

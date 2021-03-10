@@ -7,7 +7,7 @@ export default function NavMenu({ isVisible, hideMenu, onToggleMenu }) {
     <div class={`${isVisible ? 'animate-top-down' : 'animate-bottom-up'} ${hideMenu ? 'hidden' : 'fixed'} h-screen w-screen z-50 bg-material-dark text-gray-100`}>
       <div class="container h-screen w-full lg:max-w-4xl mx-auto py-20 px-5 flex flex-col justify-center items-center text-center">
         <div class="grid gap-10 mb-12">
-          <h4 class="text-xs text-yellow-700 uppercase">Browse Topics</h4>
+          <h4 class="text-xs text-gray-500 uppercase">Browse Topics</h4>
           <div class="flex flex-wrap justify-center items-center">
             <ReactCursorPosition>
                 <NavMenuItem label="Home" img="https://i.pinimg.com/474x/69/77/b7/6977b70a129ec184527433bbdf9fe457.jpg" />
@@ -43,7 +43,7 @@ function NavMenuItem({ label, img, isActive, position }) {
       </div>
       <div class="relative cursor-pointer font-serif text-4xl">
         <div>{label}</div>
-        <div class={`absolute ${isActive ? 'w-full' : 'w-0' } bg-yellow-800 h-0.5 duration-300`}></div>
+        <div class={`absolute ${isActive ? 'w-full' : 'w-0' } bg-gray-500 h-0.5 duration-300`}></div>
       </div>
     </div>
   )

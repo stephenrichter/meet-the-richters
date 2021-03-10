@@ -20,11 +20,14 @@ module.exports = {
       colors: {
         'background': '#f6f4f2',
         'background-dark': '#121212',
-        'material-dark': '#1f1f1f',
+        'material-dark': '#171717',
       },
       gridTemplateColumns: {
         '1/3': '1fr 2fr',
         '2/3': '2fr 1fr',
+        'grid-shift': '48px 1fr',
+        'layout-md': '80px 80px 40px 1fr',
+        'layout-lg': '80px 80px 120px 1fr 120px',
       },
       minHeight: {
         '1/4': '25vh',
