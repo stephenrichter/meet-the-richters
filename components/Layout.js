@@ -1,10 +1,39 @@
 import Head from 'next/head'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import { useState } from 'react'
+
+import Header from './Header'
+import Footer from './Footer'
+import NavMenu from './NavMenu'
 
 export const siteTitle = 'Meet the Richters'
 
 export default function Layout({ children }) {
+  const [isVisible, setIsVisible] = useState(false)
+  const [hideMenu, setHideMenu] = useState(true)
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async function toggleMenu() {
+    let wasVisible = isVisible
+
+    // Menu was not visible, show it
+    if(!wasVisible) {
+      setHideMenu(false)
+    }
+
+    // Trigger animation
+    setIsVisible(!isVisible)
+    // Wait for animation to finish
+    await sleep(1000)
+    
+    if (wasVisible) {
+      // Menu was visible, now it is not, hide it
+      setHideMenu(true)
+    }
+  }
+
   return (
     <div class="flex flex-col h-fill justify-between bg-background dark:bg-background-dark duration-500 -z-20">
       <Head>
@@ -23,7 +52,9 @@ export default function Layout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Header />
+      <NavMenu isVisible={isVisible} hideMenu={hideMenu} onToggleMenu={toggleMenu} />
+
+      <Header onToggleMenu={toggleMenu} />
 
       <main class="mt-24 mb-auto text-gray-900 dark:text-gray-100">{children}</main>
 

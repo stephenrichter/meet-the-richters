@@ -3,9 +3,24 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      animation: {
+        'top-down': 'top-down 1s ease-in-out',
+        'bottom-up': 'bottom-up 1s ease-in-out'
+      },
+      keyframes: {
+        'top-down': {
+          '0%': { transform: 'translatey(-100%)' },
+          '100%': { transform: 'translatey(0)' },
+        },
+        'bottom-up': {
+          '0%': { transform: 'translatey(0)' },
+          '100%': { transform: 'translatey(-100%)'},
+        }
+      },
       colors: {
         'background': '#f6f4f2',
         'background-dark': '#121212',
+        'material-dark': '#1f1f1f',
       },
       gridTemplateColumns: {
         '1/3': '1fr 2fr',
