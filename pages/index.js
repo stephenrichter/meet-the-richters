@@ -21,7 +21,7 @@ export default function Home({ allPostsData }) {
       </Head>
     
       <section class="p-10 lg:p-20">
-      <div class="h-3/4 w-3/4 absolute top-0 left-0 bg-white dark:bg-black duration-500"></div>
+      <div class="h-3/4 w-3/4 absolute top-0 left-0 bg-white dark:bg-material-dark duration-500"></div>
         <div class="container mx-auto min-h-1/2 grid lg:grid-cols-2 gap-8">
           <div class="z-10">
             <h2 class="text-7xl font-semibold lg:mt-20 font-serif">Welcome <br/>to our journal!</h2>
