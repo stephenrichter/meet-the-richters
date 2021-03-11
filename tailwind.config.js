@@ -50,10 +50,43 @@ module.exports = {
         '2xl': '1152px',
         // => @media (min-width: 1152px) { ... }
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme("colors.gray.900"),
+            a: {
+              color: theme("colors.blue.700"),
+              "&:hover": {
+                color: theme("colors.blue.700"),
+                textDecoration: "none",
+              },
+            },
+          },
+        },
+
+        dark: {
+          css: {
+            color: theme("colors.gray.100"),
+            strong: {
+              color: theme("colors.gray.200")
+            },
+            a: {
+              color: theme("colors.blue.200"),
+              "&:hover": {
+                color: theme("colors.blue.300"),
+              },
+            },
+          },
+        },
+      }),
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      typography: ['dark'],
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

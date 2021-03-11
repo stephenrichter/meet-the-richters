@@ -23,7 +23,7 @@ export default function PostGrid({ reverse, posts }) {
               {posts.map(({ id, date, title }) => (
                 
                 <Link href={`/posts/${id}`}>
-                <div key={id} class="flex flex-col justify-end min-h-1/4 bg-gray-200 dark:bg-gray-900 hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">
+                <div key={id} class="flex flex-col justify-end min-h-1/4 bg-gray-200 dark:bg-material-dark hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">
                   <h4>{title}</h4>
                   <small>
                     <Date dateString={date} />
@@ -45,7 +45,7 @@ export default function PostGrid({ reverse, posts }) {
         <div class="grid grid-rows-2 gap-4 lg:gap-8">
           {posts.map(({ id, date, title }) => (
           <Link href={`/posts/${id}`}>
-            <div key={id} class="flex flex-col justify-end bg-gray-200 dark:bg-gray-900 hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">
+            <div key={id} class="flex flex-col justify-end min-h-1/4 bg-gray-200 dark:bg-material-dark hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">
               <h4>{title}</h4>
               <small>
                 <Date dateString={date} />

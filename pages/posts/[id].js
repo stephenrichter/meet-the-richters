@@ -3,8 +3,23 @@ import Image from 'next/image'
 import Layout from '../../components/layout'
 import Date from '../../components/date'
 import { getAllPostIds, getPostData } from '../../lib/posts'
+import { useEffect } from 'react'
+
+function setDarkClass(isDark) {
+  useEffect(
+    () => {
+      if(isDark) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    }
+  )
+}
 
 export default function Post({ postData }) {
+  setDarkClass(postData.isDark)
+
   return (
     <Layout>
       <Head>
@@ -38,7 +53,7 @@ export default function Post({ postData }) {
           </section>
           <section class="p-5 md:p-10 lg:px-20 bg-white dark:bg-background-dark">
             <div class="lg:container mx-auto grid grid-cols-1 md:grid-cols-layout-md lg:grid-cols-layout-lg">
-              <div class="text-lg leading-relaxed my-5 row-start-1 row-end-2 col-start-2 lg:col-start-4 col-end-5" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+              <div class="my-5 row-start-1 row-end-2 col-start-2 lg:col-start-4 col-end-5 prose dark:prose-dark lg:prose-xl" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </div>
           </section>
         </article>

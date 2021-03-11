@@ -1,6 +1,9 @@
 ---
 title: 'Two Forms of Pre-rendering'
 date: '2020-01-01'
+summary: 'Like so many things, the race was canceled. Soon after, gyms around the country were closed. Suddenly, running — a solo activity that can be done outdoors, away from other people — seems more important than ever, for both our health and our mood.'
+author: 'Caleigh'
+isDark: false
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
