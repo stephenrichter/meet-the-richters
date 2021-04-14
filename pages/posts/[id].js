@@ -40,7 +40,7 @@ export default function Post({ postData }) {
               <div class="p-5 md:pt-10 md:pr-10 md:pb-10 md:pl-0 lg:px-0 lg:py-24 row-start-2 row-end-3 md:col-start-4 md:col-end-5">
                 <div class="grid grid-cols-1 gap-2">
                   <h5 class="text-sm font-serif">Published <Date dateString={postData.date} /></h5>
-                  <h1 class="text-3xl lg:text-5xl font-serif leading-normal mb-5 lg:mb-10">{postData.title}</h1>
+                  <h1 class="text-3xl lg:text-5xl font-serif leading-normal lg:leading-normal mb-5 lg:mb-10">{postData.title}</h1>
                 </div>
                 <div class="grid grid-cols-grid-shift lg:grid-cols-1/3 gap-2 md:gap-5">
                   <p class="col-start-2 col-end-3 font-serif text-xl font-light leading-normal">{postData.summary}</p>
@@ -53,7 +53,7 @@ export default function Post({ postData }) {
           </section>
           <section class="p-5 md:p-10 lg:px-20 bg-white dark:bg-background-dark">
             <div class="lg:container mx-auto grid grid-cols-1 md:grid-cols-layout-md lg:grid-cols-layout-lg">
-              <div class="my-5 row-start-1 row-end-2 col-start-2 lg:col-start-4 col-end-5 prose dark:prose-dark lg:prose-xl" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+              <div class="my-5 row-start-1 row-end-2 col-start-2 lg:col-start-4 col-end-5 prose dark:prose-dark lg:prose-lg" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </div>
           </section>
         </article>

@@ -5,15 +5,18 @@ import PostGrid from '../components/PostGrid'
 import { getSortedPostsData } from '../lib/posts'
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const calPostsData = getSortedPostsData('Caleigh')
+  const stevePostsData = getSortedPostsData('Stephen')
+
   return {
     props: {
-      allPostsData
+      calPostsData,
+      stevePostsData
     }
   }
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({ calPostsData, stevePostsData }) {
   return (
     <Layout>
       <Head>
@@ -24,7 +27,7 @@ export default function Home({ allPostsData }) {
         <div class="h-3/4 w-3/4 absolute top-0 left-0 bg-white dark:bg-material-dark duration-500"></div>
         <div class="container mx-auto min-h-1/2 grid lg:grid-cols-2 gap-8">
           <div class="z-10">
-            <h2 class="text-7xl font-semibold lg:mt-20 font-serif">Welcome <br/>to our journal!</h2>
+            <h2 class="text-7xl font-bold lg:mt-20 font-serif">Welcome <br/>to our journal!</h2>
             <p class="text-lg mt-4">We hope you follow along and enjoy some of our stories. We hope you follow along and enjoy some of our stories. We hope you follow along and enjoy some of our stories. Lorem ipsum.</p>
           </div>
 
@@ -34,9 +37,9 @@ export default function Home({ allPostsData }) {
         </div>
       </section>
 
-      <PostGrid posts={allPostsData} reverse />
+      <PostGrid posts={stevePostsData} reverse />
 
-      <PostGrid posts={allPostsData} />
+      <PostGrid posts={calPostsData} />
     </Layout>
   )
 }

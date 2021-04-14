@@ -19,7 +19,7 @@ export default function PostGrid({ reverse, posts }) {
             <Image src="/images/hero.jpg" alt="The Richters" width={780} height={520} layout="responsive" />
           </div>
           <ReactVisibilitySensor onChange={onChange}>
-            <div class="grid grid-rows-2 gap-4 lg:gap-8">
+            <div class="grid grid-rows-1 gap-4 lg:gap-8">
               {posts.map(({ id, date, title }) => (
                 
                 <Link href={`/posts/${id}`}>
@@ -42,7 +42,7 @@ export default function PostGrid({ reverse, posts }) {
           <Image src="/images/hero.jpg" alt="The Richters" width={780} height={520} layout="responsive" />
         </div>
 
-        <div class="grid grid-rows-2 gap-4 lg:gap-8">
+        <div class="grid grid-rows-1 gap-4 lg:gap-8">
           {posts.map(({ id, date, title }) => (
           <Link href={`/posts/${id}`}>
             <div key={id} class="flex flex-col justify-end min-h-1/4 bg-gray-200 dark:bg-material-dark hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">

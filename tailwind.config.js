@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class', // or 'media' or 'class'
@@ -21,6 +23,10 @@ module.exports = {
         'background': '#f6f4f2',
         'background-dark': '#121212',
         'material-dark': '#171717',
+      },
+      fontFamily: {
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
       },
       gridTemplateColumns: {
         '1/3': '1fr 2fr',
@@ -61,14 +67,18 @@ module.exports = {
                 textDecoration: "none",
               },
             },
+            'font-weight': 300,
           },
         },
 
         dark: {
           css: {
-            color: theme("colors.gray.100"),
+            color: theme("colors.gray.400"),
             strong: {
-              color: theme("colors.gray.200")
+              color: theme("colors.white")
+            },
+            blockquote: {
+              color: theme('colors.gray.100')
             },
             a: {
               color: theme("colors.blue.200"),
