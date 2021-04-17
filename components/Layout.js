@@ -35,7 +35,7 @@ export default function Layout({ children }) {
   }
 
   return (
-    <div class="flex flex-col h-fill justify-between bg-background dark:bg-background-dark duration-500 -z-20">
+    <div className="flex flex-col h-fill justify-between bg-background dark:bg-background-dark duration-500 -z-20">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -56,7 +56,7 @@ export default function Layout({ children }) {
 
       <Header onToggleMenu={toggleMenu} />
 
-      <main class="mt-20 mb-auto text-gray-900 dark:text-gray-100">{children}</main>
+      <main className="mt-20 mb-auto text-gray-900 dark:text-gray-100">{children}</main>
 
       <Footer />
     </div>

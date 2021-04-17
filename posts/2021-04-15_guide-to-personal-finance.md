@@ -3,7 +3,8 @@ title: 'A Guide to Personal Finance: 5 Steps to managing your money and mind'
 date: '2021-04-15'
 summary: 'Money and finance shouldn’t be a dirty word that we only speak about behind closed doors. Chances are, the less your family talked about money while you were growing up, the less likely you are to be financially literate - unless you took it upon yourself to learn about money.'
 author: 'Stephen'
-tags: ['Guide', 'Finance']
+tags: ['Life']
+image: 'article-personal_finance.jpg'
 isDark: false
 ---
 

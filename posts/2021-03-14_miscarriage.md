@@ -1,9 +1,10 @@
 ---
-title: 'Miscarriage'
-date: '2021-03-14'
+title: 'Baby Loss: Our Experience'
+date: '2021-03-19'
 summary: 'Today marks the last day of winter and officially 2 months since I found out I was miscarrying my first pregnancy. Somehow the two seem to coincide…but as spring approaches and the flowers poke from the ground I look forward to a new chapter starting. Admittedly a chapter that I have no idea the plot of but I am certain there are brighter days ahead.'
 author: 'Caleigh'
-tags: ['Home']
+tags: ['Life']
+image: 'article-miscarriage.jpg'
 isDark: false
 ---
 

@@ -13,39 +13,38 @@ export function onChange(isVisible) {
 
 export default function PostGrid({ reverse, posts }) {
   return reverse ? (
-    <section class="p-10 lg:p-20">
-        <div class="container mx-auto grid lg:grid-cols-2/3 gap-4 lg:gap-8">
+    <section className="p-10 lg:p-20">
+        <div className="container mx-auto grid lg:grid-cols-2/3 gap-4 lg:gap-8">
           <div>
-            <Image src="/images/hero.jpg" alt="The Richters" width={780} height={520} layout="responsive" />
+            <Image src="/images/article-personal_finance.jpg" alt="The Richters" width={780} height={520} layout="responsive" />
           </div>
           <ReactVisibilitySensor onChange={onChange}>
-            <div class="grid grid-rows-1 gap-4 lg:gap-8">
+            <div className="grid grid-rows-1 gap-4 lg:gap-8">
               {posts.map(({ id, date, title }) => (
-                
-                <Link href={`/posts/${id}`}>
-                <div key={id} class="flex flex-col justify-end min-h-1/4 bg-gray-200 dark:bg-material-dark hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">
-                  <h4>{title}</h4>
-                  <small>
-                    <Date dateString={date} />
-                  </small>
-                </div>
-              </Link>
+                <Link key={id} href={`/posts/${id}`}>
+                  <div className="flex flex-col justify-end min-h-1/4 bg-gray-200 dark:bg-material-dark hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">
+                    <h4>{title}</h4>
+                    <small>
+                      <Date dateString={date} />
+                    </small>
+                  </div>
+                </Link>
               ))}
             </div>
           </ReactVisibilitySensor>
         </div>
     </section>
   ) : (
-    <section class="p-10 lg:p-20">
-      <div class="container mx-auto grid lg:grid-cols-1/3 gap-4 lg:gap-8">
-        <div class="order-first lg:order-last">
-          <Image src="/images/hero.jpg" alt="The Richters" width={780} height={520} layout="responsive" />
+    <section className="p-10 lg:p-20">
+      <div className="container mx-auto grid lg:grid-cols-1/3 gap-4 lg:gap-8">
+        <div className="order-first lg:order-last">
+          <Image src="/images/article-miscarriage.jpg" alt="The Richters" width={780} height={520} layout="responsive" />
         </div>
 
-        <div class="grid grid-rows-1 gap-4 lg:gap-8">
+        <div className="grid grid-rows-1 gap-4 lg:gap-8">
           {posts.map(({ id, date, title }) => (
-          <Link href={`/posts/${id}`}>
-            <div key={id} class="flex flex-col justify-end min-h-1/4 bg-gray-200 dark:bg-material-dark hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">
+          <Link key={id} href={`/posts/${id}`}>
+            <div className="flex flex-col justify-end min-h-1/4 bg-gray-200 dark:bg-material-dark hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">
               <h4>{title}</h4>
               <small>
                 <Date dateString={date} />
