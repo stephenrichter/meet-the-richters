@@ -1,7 +1,6 @@
-import { useState } from "react"
 import ReactCursorPosition from "react-cursor-position"
 
-export default function NavMenu({ isVisible, hideMenu, onToggleMenu }) {
+export default function NavMenu({ isVisible, hideMenu, onToggleMenu, tags }) {
   return (
     
     <div className={`${isVisible ? 'animate-top-down' : 'animate-bottom-up'} ${hideMenu ? 'hidden' : 'fixed'} h-screen w-screen z-50 bg-material-dark text-gray-100`}>
@@ -9,21 +8,11 @@ export default function NavMenu({ isVisible, hideMenu, onToggleMenu }) {
         <div className="grid gap-10 mb-12">
           <h4 className="text-xs text-gray-500 uppercase">Browse Topics</h4>
           <div className="flex flex-wrap justify-center items-center">
-            <ReactCursorPosition>
-                <NavMenuItem label="Home" img="https://i.pinimg.com/474x/69/77/b7/6977b70a129ec184527433bbdf9fe457.jpg" />
-            </ReactCursorPosition>
-            <ReactCursorPosition>
-                <NavMenuItem label="Fitness" img="https://i.pinimg.com/564x/35/2e/c9/352ec9dafc8672d9749c42f082fb1b63.jpg" />
-            </ReactCursorPosition>
-            <ReactCursorPosition>
-                <NavMenuItem label="Food" img="https://i.pinimg.com/474x/69/77/b7/6977b70a129ec184527433bbdf9fe457.jpg" />
-            </ReactCursorPosition>
-            <ReactCursorPosition>
-                <NavMenuItem label="Tech" img="https://i.pinimg.com/564x/35/2e/c9/352ec9dafc8672d9749c42f082fb1b63.jpg" />
-            </ReactCursorPosition>
-            <ReactCursorPosition>
-                <NavMenuItem label="Travel" img="https://i.pinimg.com/474x/69/77/b7/6977b70a129ec184527433bbdf9fe457.jpg" />
-            </ReactCursorPosition>
+            {tags.map((tag, index) => (
+              <ReactCursorPosition key={index}>
+                <NavMenuItem id={index} label={tag} img="https://i.pinimg.com/474x/69/77/b7/6977b70a129ec184527433bbdf9fe457.jpg" />
+              </ReactCursorPosition>
+            ))}
           </div>
         </div>
         <div className="rounded-full h-16 w-16 mx-auto flex items-center justify-center border border-gray-300 hover:border-gray-500 cursor-pointer" onClick={onToggleMenu}>
@@ -34,10 +23,10 @@ export default function NavMenu({ isVisible, hideMenu, onToggleMenu }) {
   )
 }
 
-function NavMenuItem({ label, img, isActive, position }) {
+function NavMenuItem({ id, label, img, isActive, position }) {
   return (
     <div className="relative flex items-center h-20">
-      <div className="px-5 text-2xl">•</div>
+      { id !== 0 && <div className="px-5 text-2xl">•</div> }
       <div className={`${isActive ? 'absolute opacity-100' : 'absolute opacity-0'} w-48 h-48 -z-10 pointer-events-none duration-300`} style={{top: (position.y-125), left: (position.x+50)}}>
         <img src={img} />
       </div>

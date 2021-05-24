@@ -2,23 +2,26 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout, { siteTitle } from '../components/layout'
 import PostGrid from '../components/PostGrid'
-import { getSortedPostsData } from '../lib/posts'
+import { getSortedPostsData, getAllTags } from '../lib/posts'
 
 export async function getStaticProps() {
   const calPostsData = getSortedPostsData('Caleigh')
   const stevePostsData = getSortedPostsData('Stephen')
+  
+  const allTagsData = getAllTags()
 
   return {
     props: {
       calPostsData,
-      stevePostsData
+      stevePostsData,
+      allTagsData,
     }
   }
 }
 
-export default function Home({ calPostsData, stevePostsData }) {
+export default function Home({ calPostsData, stevePostsData, allTagsData }) {
   return (
-    <Layout>
+    <Layout tags={allTagsData}>
       <Head>
         <title>{siteTitle}</title>
       </Head>

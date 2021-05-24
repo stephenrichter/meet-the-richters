@@ -23,10 +23,10 @@ export default function PostGrid({ reverse, posts }) {
               {posts.map(({ id, date, title }) => (
                 <Link key={id} href={`/posts/${id}`}>
                   <div className="flex flex-col justify-end min-h-1/4 bg-gray-200 dark:bg-material-dark hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">
-                    <h4>{title}</h4>
-                    <small>
+                    <h4 className="pb-4 text-2xl font-serif">{title}</h4>
+                    <p className="text-sm">
                       <Date dateString={date} />
-                    </small>
+                    </p>
                   </div>
                 </Link>
               ))}
@@ -45,10 +45,10 @@ export default function PostGrid({ reverse, posts }) {
           {posts.map(({ id, date, title }) => (
           <Link key={id} href={`/posts/${id}`}>
             <div className="flex flex-col justify-end min-h-1/4 bg-gray-200 dark:bg-material-dark hover:bg-gray-300 dark:hover:bg-gray-800 cursor-pointer p-4">
-              <h4>{title}</h4>
-              <small>
+              <h4 className="pb-4 text-2xl font-serif">{title}</h4>
+              <p className="text-sm">
                 <Date dateString={date} />
-              </small>
+              </p>
             </div>
           </Link>
           ))}

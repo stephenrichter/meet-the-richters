@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../../components/layout'
 import Date from '../../components/date'
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import { getAllPostIds, getPostData, getAllTags } from '../../lib/posts'
 import { useEffect } from 'react'
 
 function setDarkClass(isDark) {
@@ -17,11 +17,11 @@ function setDarkClass(isDark) {
   )
 }
 
-export default function Post({ postData }) {
+export default function Post({ postData, allTagsData }) {
   setDarkClass(postData.isDark)
 
   return (
-    <Layout>
+    <Layout tags={allTagsData}>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -71,10 +71,13 @@ export function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const allTagsData = getAllTags()
   const postData = await getPostData(params.id)
+
   return {
     props: {
-      postData
+      postData,
+      allTagsData,
     }
   }
 }

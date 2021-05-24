@@ -7,7 +7,7 @@ import NavMenu from './NavMenu'
 
 export const siteTitle = 'Meet the Richters'
 
-export default function Layout({ children }) {
+export default function Layout({ children, tags }) {
   const [isVisible, setIsVisible] = useState(false)
   const [hideMenu, setHideMenu] = useState(true)
 
@@ -52,7 +52,7 @@ export default function Layout({ children }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <NavMenu isVisible={isVisible} hideMenu={hideMenu} onToggleMenu={toggleMenu} />
+      <NavMenu isVisible={isVisible} hideMenu={hideMenu} onToggleMenu={toggleMenu} tags={tags} />
 
       <Header onToggleMenu={toggleMenu} />
 
